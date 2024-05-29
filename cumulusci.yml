@@ -1,0 +1,28 @@
+minimum_cumulusci_version: '3.88.0'
+project:
+    name: ab-34
+    package:
+        name: ab-34
+        api_version: '60.0'
+    git:
+        default_branch: 'main'
+        prefix_feature: 'feature/'
+        prefix_beta: 'beta/'
+        prefix_release: 'release/'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/ab-34/tests
+            options:
+                outputdir: robot/ab-34/results
+
+    robot_testdoc:
+        options:
+            path: robot/ab-34/tests
+            output: robot/ab-34/doc/ab-34_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
